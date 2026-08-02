@@ -660,6 +660,22 @@ export const FormPanel: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-muraqqa-slate mb-1">
+                  Template Design
+                </label>
+                <select
+                  value={resume.themeSettings.templateId}
+                  onChange={(e) =>
+                    updateThemeSettings({ templateId: e.target.value })
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-muraqqa-teal focus:outline-hidden text-sm bg-white"
+                >
+                  <option value="classic">Classic Muraqqa</option>
+                  <option value="modern">Modern Minimalist</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-muraqqa-slate mb-1">
                   Font Family
                 </label>
                 <select
