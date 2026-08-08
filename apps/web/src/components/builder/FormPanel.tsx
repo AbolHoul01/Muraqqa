@@ -685,10 +685,10 @@ export const FormPanel: React.FC = () => {
                   }
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-muraqqa-teal focus:outline-hidden text-sm bg-white"
                 >
-                  <option value="Vazirmatn">Vazirmatn (Persian/English)</option>
-                  <option value="Inter">Inter (Modern Sans)</option>
-                  <option value="Roboto">Roboto</option>
-                  <option value="Merriweather">Merriweather (Serif)</option>
+                  <option value="Vazirmatn">Vazirmatn (وزیرمتن - استاندارد)</option>
+                  <option value="Sahel">Sahel (ساحل)</option>
+                  <option value="Inter">Inter (اینتر - Latin)</option>
+                  <option value="Roboto">Roboto (روبوتو - Latin)</option>
                 </select>
               </div>
 

@@ -5,6 +5,11 @@
   --color-muraqqa-teal: #14B8A6;
   --color-muraqqa-paper: #FAF9F6;
   --color-muraqqa-slate: #64748B;
+
+  --font-vazirmatn: var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif;
+  --font-inter: var(--font-inter), Inter, sans-serif;
+  --font-roboto: var(--font-roboto), Roboto, sans-serif;
+  --font-sahel: Sahel, Vazirmatn, Tahoma, sans-serif;
 }
 
 :root {
@@ -15,7 +20,23 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: inherit;
+  font-family: var(--font-vazirmatn), Vazirmatn, sans-serif;
+}
+
+.font-vazirmatn {
+  font-family: var(--font-vazirmatn), Vazirmatn, Tahoma, sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), Inter, sans-serif;
+}
+
+.font-roboto {
+  font-family: var(--font-roboto), Roboto, sans-serif;
+}
+
+.font-sahel {
+  font-family: Sahel, Vazirmatn, Tahoma, sans-serif;
 }
 
 /* Print & PDF styling standard */
