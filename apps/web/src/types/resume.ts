@@ -58,7 +58,7 @@ export interface Skill {
  */
 export interface ThemeSettings {
   primaryColor: string;
-  fontFamily: "Inter" | "Vazirmatn" | "Roboto" | "Merriweather" | string;
+  fontFamily: "Vazirmatn" | "Sahel" | "Inter" | "Roboto" | string;
   fontSize: "sm" | "md" | "lg";
   layoutDensity: "compact" | "comfortable" | "spacious";
   direction: "rtl" | "ltr";
