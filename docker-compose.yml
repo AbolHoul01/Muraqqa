@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: muraqqa_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: muraqqa_db
+      POSTGRES_USER: muraqqa_admin
+      POSTGRES_PASSWORD: secretpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U muraqqa_admin -d muraqqa_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    container_name: muraqqa_api
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_USER: muraqqa_admin
+      DB_PASSWORD: secretpassword
+      DB_NAME: muraqqa_db
+      JWT_SECRET: muraqqa_super_secret_jwt_signing_key_2026
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    container_name: muraqqa_web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8080
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
