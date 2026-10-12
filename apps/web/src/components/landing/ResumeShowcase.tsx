@@ -300,9 +300,7 @@ const ResumeSlideCard: React.FC<ResumeSlideCardProps> = ({
           ? "opacity-100 scale-100 translate-y-0 visible z-10 pointer-events-auto"
           : "opacity-0 scale-[0.98] translate-y-2 invisible z-0 pointer-events-none"
       } ${
-        isPersian
-          ? "font-[family-name:var(--font-vazirmatn)]"
-          : "font-[family-name:var(--font-geist-sans)]"
+        isPersian ? "font-persian" : "font-latin"
       }`}
     >
       {resume.layout === "sidebar" ? (

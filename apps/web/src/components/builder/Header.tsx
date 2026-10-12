@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
         } else {
           alert("Invalid JSON format.");
         }
-      } catch (err) {
+      } catch {
         alert("Failed to parse JSON file.");
       }
     };
@@ -79,7 +79,7 @@ export const Header: React.FC = () => {
     <header className="no-print bg-muraqqa-navy text-white shadow-md px-6 py-4 flex flex-wrap items-center justify-between gap-4">
       <div className="flex items-center gap-3">
         <h1 className="text-2xl font-bold tracking-wide">مرقع | Muraqqa</h1>
-        <span className="text-xs bg-muraqqa-teal text-navy-900 font-semibold px-2 py-0.5 rounded-full">
+        <span className="text-xs bg-muraqqa-teal text-muraqqa-navy font-semibold px-2 py-0.5 rounded-full">
           Privacy-First
         </span>
       </div>
@@ -152,7 +152,7 @@ export const Header: React.FC = () => {
         <button
           onClick={handlePrint}
           title="Print or Save as PDF"
-          className="flex items-center gap-2 px-4 py-1.5 rounded bg-muraqqa-teal hover:bg-teal-500 font-bold text-navy-900 text-sm transition-colors shadow-xs"
+          className="flex items-center gap-2 px-4 py-1.5 rounded bg-muraqqa-teal hover:bg-teal-500 font-bold text-muraqqa-navy text-sm transition-colors shadow-xs"
         >
           <Printer className="w-4 h-4" />
           <span>Download PDF</span>

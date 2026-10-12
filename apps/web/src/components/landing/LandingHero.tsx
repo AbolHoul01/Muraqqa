@@ -30,7 +30,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-5.5xl font-extrabold tracking-tight text-muraqqa-navy leading-[1.2]">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-muraqqa-navy leading-[1.2]">
               {content.title}
               <span className="block mt-2 text-muraqqa-slate font-bold text-2xl sm:text-4xl">
                 {content.titleHighlight}

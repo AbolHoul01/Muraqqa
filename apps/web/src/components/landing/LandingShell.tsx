@@ -22,9 +22,7 @@ export const LandingShell: React.FC = () => {
       dir={isRtl ? "rtl" : "ltr"}
       lang={lang}
       className={`min-h-screen flex flex-col bg-muraqqa-paper text-muraqqa-navy selection:bg-muraqqa-teal selection:text-muraqqa-navy ${
-        isRtl
-          ? "font-[family-name:var(--font-vazirmatn)]"
-          : "font-[family-name:var(--font-geist-sans)]"
+        isRtl ? "font-persian" : "font-latin"
       }`}
     >
       <LandingNavbar
