@@ -36,7 +36,7 @@ export const LandingShell: React.FC = () => {
       <main className="flex-1">
         <LandingHero
           content={content.hero}
-          preview={content.heroPreview}
+          showcase={content.showcase}
           isRtl={isRtl}
         />
         <LandingFeatures content={content.features} />

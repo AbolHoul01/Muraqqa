@@ -2,16 +2,17 @@ import React from "react";
 import Link from "next/link";
 import { ShieldCheck, ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { LandingContent, GITHUB_URL } from "@/content/landing";
+import { ResumeShowcase } from "./ResumeShowcase";
 
 interface LandingHeroProps {
   content: LandingContent["hero"];
-  preview: LandingContent["heroPreview"];
+  showcase: LandingContent["showcase"];
   isRtl: boolean;
 }
 
 export const LandingHero: React.FC<LandingHeroProps> = ({
   content,
-  preview,
+  showcase,
   isRtl,
 }) => {
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
@@ -83,80 +84,12 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             </div>
           </div>
 
-          {/* Illustrative Stylized A4 Resume Preview Card */}
+          {/* Rotating Resume Showcase */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            <div
-              className="w-full max-w-md bg-white border border-gray-200/90 rounded-2xl shadow-xl p-6 sm:p-7 text-start transition-all hover:shadow-2xl"
-              aria-hidden="true"
-            >
-              {/* Header block mimicking ModernTemplate */}
-              <div className="bg-muraqqa-navy text-white rounded-xl p-5 mb-5 shadow-xs">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="font-extrabold text-lg text-white tracking-tight">
-                    {preview.name}
-                  </span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-muraqqa-teal text-muraqqa-navy px-2 py-0.5 rounded">
-                    A4 PDF
-                  </span>
-                </div>
-                <div className="text-xs text-muraqqa-teal font-semibold">
-                  {preview.role}
-                </div>
-                <div className="text-[11px] text-gray-300 mt-2 truncate">
-                  {preview.contact}
-                </div>
-              </div>
-
-              {/* Summary Section */}
-              <div className="mb-5">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-muraqqa-slate mb-1.5">
-                  {preview.summaryHeading}
-                </div>
-                <div className="bg-muraqqa-paper border-s-4 border-muraqqa-teal p-3 rounded text-[11px] text-muraqqa-navy leading-relaxed">
-                  {preview.summary}
-                </div>
-              </div>
-
-              {/* Work Experience Section */}
-              <div className="mb-5">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-muraqqa-slate mb-2">
-                  {preview.experienceHeading}
-                </div>
-                <div className="border-s-2 border-gray-200 ps-3.5 space-y-1">
-                  <div className="flex items-baseline justify-between text-xs">
-                    <span className="font-bold text-muraqqa-navy">
-                      {preview.expRole}
-                    </span>
-                    <span className="text-[10px] text-muraqqa-slate font-medium">
-                      {preview.expDate}
-                    </span>
-                  </div>
-                  <div className="text-[11px] text-muraqqa-slate font-semibold">
-                    {preview.expCompany}
-                  </div>
-                  <div className="text-[11px] text-muraqqa-navy leading-relaxed pt-0.5">
-                    {preview.expDesc}
-                  </div>
-                </div>
-              </div>
-
-              {/* Skills Pill Section */}
-              <div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-muraqqa-slate mb-2">
-                  {preview.skillsHeading}
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {preview.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-[10px] font-semibold bg-muraqqa-paper text-muraqqa-navy border border-gray-200 px-2.5 py-1 rounded-md"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <ResumeShowcase
+              dotAriaLabelTemplate={showcase.dotAriaLabel}
+              isRtl={isRtl}
+            />
           </div>
         </div>
       </div>

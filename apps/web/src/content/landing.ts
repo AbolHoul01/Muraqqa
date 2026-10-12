@@ -42,19 +42,8 @@ export interface LandingContent {
     secondaryCta: string;
     note: string;
   };
-  heroPreview: {
-    name: string;
-    role: string;
-    contact: string;
-    summaryHeading: string;
-    summary: string;
-    experienceHeading: string;
-    expRole: string;
-    expCompany: string;
-    expDate: string;
-    expDesc: string;
-    skillsHeading: string;
-    skills: string[];
+  showcase: {
+    dotAriaLabel: string;
   };
   features: {
     badge: string;
@@ -108,21 +97,8 @@ export const landingContent: Record<Language, LandingContent> = {
       secondaryCta: "مشاهده در گیت‌هاب",
       note: "بدون نیاز به ثبت‌نام یا ایمیل • ذخیره‌سازی محلی در مرورگر",
     },
-    heroPreview: {
-      name: "سارا محمدی",
-      role: "مهندس ارشد نرم‌افزار",
-      contact: "تهران • sara@example.com • github.com/sara",
-      summaryHeading: "درباره من",
-      summary:
-        "توسعه‌دهنده با بیش از ۶ سال سابقه در طراحی و پیاده‌سازی سیستم‌های توزیع‌شده با کارایی بالا و رابط‌های کاربری مدرن.",
-      experienceHeading: "سوابق شغلی",
-      expRole: "توسعه‌دهنده ارشد فرانت‌اند",
-      expCompany: "شرکت فناوری پیشرو",
-      expDate: "۱۴۰۱ — اکنون",
-      expDesc:
-        "طراحی معماری مجدد پلتفرم وب، بهبود ۶۰ درصدی سرعت بارگذاری و پیاده‌سازی دیزاین سیستم سازمانی.",
-      skillsHeading: "مهارت‌ها",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Go", "Docker"],
+    showcase: {
+      dotAriaLabel: "نمایش رزومه {current} از {total}",
     },
     features: {
       badge: "چرا مرقع؟",
@@ -226,21 +202,8 @@ export const landingContent: Record<Language, LandingContent> = {
       secondaryCta: "View on GitHub",
       note: "No sign-up required • Pure in-browser local storage",
     },
-    heroPreview: {
-      name: "Alex Morgan",
-      role: "Senior Software Engineer",
-      contact: "San Francisco, CA • alex@example.com • github.com/alexm",
-      summaryHeading: "About Me",
-      summary:
-        "Product-focused software engineer with 6+ years of experience designing robust distributed systems and responsive web applications.",
-      experienceHeading: "Work Experience",
-      expRole: "Senior Frontend Engineer",
-      expCompany: "Tech Innovations Inc.",
-      expDate: "2022 — Present",
-      expDesc:
-        "Architected core web platforms, reduced client load times by 60%, and led the adoption of a modular design system across 4 teams.",
-      skillsHeading: "Skills",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Go", "Docker"],
+    showcase: {
+      dotAriaLabel: "Show resume {current} of {total}",
     },
     features: {
       badge: "Why Muraqqa?",
