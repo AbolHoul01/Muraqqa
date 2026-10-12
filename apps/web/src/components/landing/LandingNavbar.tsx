@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Languages } from "lucide-react";
 import { NavLink, Language } from "@/content/landing";
 
@@ -30,9 +31,17 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({
         <div className="flex items-center gap-3">
           <Link
             href="/"
-            className="text-xl font-extrabold tracking-tight text-muraqqa-navy hover:opacity-90 transition-opacity focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-muraqqa-teal rounded-md"
+            className="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-muraqqa-navy hover:opacity-90 transition-opacity focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-muraqqa-teal rounded-md"
           >
-            {brand.name}
+            <Image
+              src="/logo.png"
+              alt=""
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain"
+              priority
+            />
+            <span>{brand.name}</span>
           </Link>
           <span className="hidden sm:inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full bg-muraqqa-teal/15 text-muraqqa-navy">
             {brand.taglineBadge}

@@ -74,7 +74,7 @@ export interface LandingContent {
 export const landingContent: Record<Language, LandingContent> = {
   fa: {
     brand: {
-      name: "مرقع | Muraqqa",
+      name: "مرقع",
       taglineBadge: "حریم خصوصی محور",
     },
     nav: {
@@ -179,7 +179,7 @@ export const landingContent: Record<Language, LandingContent> = {
   },
   en: {
     brand: {
-      name: "Muraqqa | مرقع",
+      name: "Muraqqa",
       taglineBadge: "Privacy-First",
     },
     nav: {

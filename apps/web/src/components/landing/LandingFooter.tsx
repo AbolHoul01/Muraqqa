@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { LandingContent } from "@/content/landing";
 
 interface LandingFooterProps {
@@ -20,7 +21,15 @@ export const LandingFooter: React.FC<LandingFooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start text-start">
           {/* Brand & Mission Column */}
           <div className="md:col-span-7 space-y-3">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/logo.png"
+                alt=""
+                width={28}
+                height={28}
+                className="w-7 h-7 object-contain"
+                aria-hidden="true"
+              />
               <span className="text-xl font-bold tracking-tight text-muraqqa-navy">
                 {brand.name}
               </span>
