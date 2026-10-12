@@ -7,6 +7,11 @@
   --color-muraqqa-slate: #64748B;
 }
 
+@theme inline {
+  --font-latin: var(--font-geist-sans);
+  --font-persian: var(--font-vazirmatn);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
