@@ -1,8 +1,7 @@
 /**
- * Placeholder GitHub URL for Muraqqa repository.
- * Update this constant with your repository URL.
+ * GitHub URL for Muraqqa repository.
  */
-export const GITHUB_URL = "https://github.com/muraqqa/muraqqa";
+export const GITHUB_URL = "https://github.com/AbolHoul01/Muraqqa";
 
 export type Language = "fa" | "en";
 
