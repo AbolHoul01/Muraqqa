@@ -1,0 +1,100 @@
+import React from "react";
+import Link from "next/link";
+import { Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
+
+/**
+ * Example Landing Section Component Template
+ *
+ * Demonstrates:
+ * 1. Alternating section background and border rhythm.
+ * 2. Proper max-width container and padding scale.
+ * 3. Section pill badge, H2, and subtitle.
+ * 4. Responsive grid with Muraqqa card pattern.
+ * 5. Primary button with verified contrast and Tailwind v4 focus-visible ring.
+ * 6. Full RTL/LTR logical property compliance.
+ */
+
+export interface ExampleSectionItem {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface ExampleSectionContent {
+  badge: string;
+  title: string;
+  subtitle: string;
+  items: ExampleSectionItem[];
+  ctaLabel: string;
+  ctaHref: string;
+}
+
+interface ExampleSectionProps {
+  content: ExampleSectionContent;
+  isRtl?: boolean;
+}
+
+export const ExampleSection: React.FC<ExampleSectionProps> = ({
+  content,
+  isRtl = false,
+}) => {
+  const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
+
+  return (
+    // Alternating band: bg-white with border-y (or bg-muraqqa-paper without border-y)
+    <section className="py-16 sm:py-24 bg-white border-y border-gray-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          {/* Pill Badge */}
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-muraqqa-teal/15 text-muraqqa-navy border border-muraqqa-teal/30">
+            <Sparkles className="w-3.5 h-3.5 text-muraqqa-navy" aria-hidden="true" />
+            <span>{content.badge}</span>
+          </span>
+
+          {/* Heading */}
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-muraqqa-navy tracking-tight leading-tight">
+            {content.title}
+          </h2>
+
+          {/* Subtitle */}
+          <p className="text-sm sm:text-base text-muraqqa-slate leading-relaxed">
+            {content.subtitle}
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto mt-12 sm:mt-16">
+          {content.items.map((item) => (
+            <div
+              key={item.id}
+              className="bg-muraqqa-paper border border-gray-200 rounded-2xl p-6 sm:p-8 text-start transition-all duration-200 hover:shadow-md hover:border-muraqqa-teal/50 flex flex-col justify-between"
+            >
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-muraqqa-navy mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muraqqa-slate leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Section Footer / CTA */}
+        {content.ctaHref && (
+          <div className="mt-12 text-center">
+            <Link
+              href={content.ctaHref}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-muraqqa-teal hover:opacity-90 text-muraqqa-navy font-bold text-base shadow-sm transition-opacity focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-muraqqa-teal"
+            >
+              <span>{content.ctaLabel}</span>
+              <ArrowIcon className="w-5 h-5" aria-hidden="true" />
+            </Link>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
